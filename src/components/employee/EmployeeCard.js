@@ -6,7 +6,7 @@ class EmployeeCard extends Component {
             <div className="card">
                 <div className="card-content">
                     <picture>
-                        <img src={require('../animal/dog.svg') alt="Dog"} />
+                        <img src={require('../animal/dog.svg')} alt="Dog" />
                     </picture>
                     <h3>Name: <span className="card-petname">David Dogperson</span></h3>
                     <p>Info: David is awesome! 500 years experience</p>
