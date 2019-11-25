@@ -11,11 +11,12 @@ class NavBar extends Component {
                 </h1>
                 <nav>
                     <ul className="container">
+                        {/* When the URL matches the value of the "to" key, the Route on the ApplicationViews will know, and render accoriding to the code we write there. These are not file paths, these are taco. We just have to match taco in the Route inside ApplicationViews. */}
                         <li><Link className="nav-link" to="/">Home</Link></li>
                         <li><Link className="nav-link" to="/animals">Animals</Link></li>
-                        <li>Locations</li>
-                        <li>Employees</li>
-                        <li>Owners</li>
+                        <li><Link className="nav-link" to="/locations">Locations</Link></li>
+                        <li><Link className="nav-link" to="/employees">Employees</Link></li>
+                        <li><Link className="nav-link" to="/owners">Owners</Link></li>
                     </ul>
                 </nav>
             </header>
