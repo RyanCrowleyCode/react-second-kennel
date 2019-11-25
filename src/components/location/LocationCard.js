@@ -6,7 +6,7 @@ class LocationCard extends Component {
             <div className="card">
                 <div className="card-content">
                     <picture>
-                        <img src={require('./dog.svg')} />
+                        <img src={require('../animal/dog.svg')} />
                     </picture>
                     <h3><span className="card-petname">Nashville North</span></h3>
                     <p>Street: 500 Puppy Way<br />
