@@ -6,7 +6,7 @@ class Ownercard extends Component {
             <div className="card">
                 <div className="card-content">
                     <picture>
-                        <img src={require('../animal/dog.svg')} />
+                        <img src={require('../animal/dog.svg') alt="Dog"} />
                     </picture>
                     <h3>Name: <span className="card-petname">Susan Susanite</span></h3>
                     <p>Info: Loves them dogs.</p>
