@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
 
 class OwnerCard extends Component {
-    render () {
+    render() {
         return (
             <div className="card">
                 <div className="card-content">
                     <picture>
-                        <img src={require('../animal/dog.svg')} alt="Dog" />
+                        <img src={require(`./${this.props.owner.pictureName}`)} alt="Dog" />
                     </picture>
-                    <h3>Name: <span className="card-petname">Susan Susanite</span></h3>
-                    <p>Info: Loves them dogs.</p>
+                    <h3>Name: <span className="card-ownerName">{this.props.owner.name}</span></h3>
+                    <p><b>Phone:</b> {this.props.owner.phone}</p>
                 </div>
             </div>
         )
