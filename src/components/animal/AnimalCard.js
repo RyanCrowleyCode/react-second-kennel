@@ -1,5 +1,6 @@
 // This component is for displaying the information for a single animal.
 import React, { Component } from 'react'
+import './Animal.css'
 
 class AnimalCard extends Component {
     render() {
