@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './Employee.css'
 
 class EmployeeCard extends Component {
     render() {
@@ -6,10 +7,10 @@ class EmployeeCard extends Component {
             <div className="card">
                 <div className="card-content">
                     <picture>
-                        <img src={require('../animal/dog.svg')} alt="Dog" />
+                        <img src={require(`./${this.props.employee.pictureName}`)} alt="Employee" />
                     </picture>
-                    <h3>Name: <span className="card-petname">David Dogperson</span></h3>
-                    <p>Info: David is awesome! 500 years experience</p>
+                    <h3>Name: <span className="card-employeeName">{this.props.employee.name}</span></h3>
+                    <p><b>Info:</b> {this.props.employee.info}</p>
                 </div>
             </div>
         )
