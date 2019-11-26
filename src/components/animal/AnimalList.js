@@ -8,20 +8,23 @@ class AnimalList extends Component {
         animals: []
     }
 
-    componentDidMount () {
+    componentDidMount() {
         //getAll from AnimalManager and hang on to that data; put it in state
         AnimalManager.getAll()
-        .then((animalsArray) => {
-            this.setState({
-                animals: animalsArray
+            .then((animalsArray) => {
+                this.setState({
+                    animals: animalsArray
+                })
             })
-        })
     }
 
-    render () {
+    render() {
         return (
             <div className="container-cards">
-                {this.state.animals.map(animal => <AnimalCard key={animal.id}/>)}
+                {this.state.animals.map(animal => <AnimalCard
+                    key={animal.id}
+                    animal={animal}
+                />)}
             </div>
         )
     }
