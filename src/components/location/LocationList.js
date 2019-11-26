@@ -7,19 +7,22 @@ class LocationList extends Component {
         locations: []
     }
 
-    componentDidMount () {
+    componentDidMount() {
         LocationManager.getAll()
-        .then((locationsArray) => {
-            this.setState({
-                locations: locationsArray
+            .then((locationsArray) => {
+                this.setState({
+                    locations: locationsArray
+                })
             })
-        })
     }
 
-    render () {
+    render() {
         return (
             <div className="container-cards">
-                {this.state.locations.map(location => <LocationCard key={location.id}/>)}
+                {this.state.locations.map(location => <LocationCard
+                    key={location.id}
+                    location={location}
+                />)}
             </div>
         )
     }

@@ -1,0 +1,8 @@
+.main-image {
+    width: 80%;
+    height: auto;
+    border: 1px solid cornflowerblue;
+    border-radius: 5px;
+    padding: 0;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}

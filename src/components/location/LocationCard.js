@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './Location.css'
 
 class LocationCard extends Component {
     render() {
@@ -6,13 +7,13 @@ class LocationCard extends Component {
             <div className="card">
                 <div className="card-content">
                     <picture>
-                        <img src={require('../animal/dog.svg')} alt="Dog" />
+                        <img src={require(`./${this.props.location.pictureName}`)} alt="Location" />
                     </picture>
-                    <h3><span className="card-petname">Nashville North</span></h3>
-                    <p>Street: 500 Puppy Way<br />
-                    City: Nashville<br />
-                    State: TN<br />
-                    Zip: 37023
+                    <h3>Name: <span className="card-locationName">{this.props.location.name}</span></h3>
+                    <p>Street: {this.props.location.street}<br />
+                        City: {this.props.location.city}<br />
+                        State: {this.props.location.state}<br />
+                        Zip: {this.props.location.zip}
                     </p>
                 </div>
             </div>
