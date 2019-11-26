@@ -6,7 +6,7 @@ const OwnerManager = {
     },
 
     getAll() {
-        return fetch(`${baseURL}/owners`)
+        return fetch(`${baseURL}/owners`).then(response => response.json())
     }
 }
 

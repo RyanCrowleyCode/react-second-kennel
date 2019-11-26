@@ -9,7 +9,7 @@ class LocationList extends Component {
 
     componentDidMount () {
         LocationManager.getAll()
-        .then(locationsArray => {
+        .then((locationsArray) => {
             this.setState({
                 locations: locationsArray
             })

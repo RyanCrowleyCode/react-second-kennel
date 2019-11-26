@@ -5,14 +5,14 @@ import EmployeeManager from '../../modules/EmployeeManager'
 class EmployeeList extends Component {
 
     state = {
-        employees = []
+        employees: []
     }
 
     componentDidMount() {
         EmployeeManager.getAll()
         .then(employeeArray => {
             this.setState({
-                employees = employeeArray
+                employees: employeeArray
             })
         })
     }

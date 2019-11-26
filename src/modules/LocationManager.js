@@ -1,12 +1,12 @@
-const baseURL = "http://localhost:5002"
+const remoteURL = "http://localhost:5002"
 
 const LocationManager = {
     get(id) {
-        return fetch(`${baseURL}/locations/${id}`).then(response => response.json())
+        return fetch(`${remoteURL}/locations/${id}`).then(response => response.json())
     },
 
     getAll() {
-        return fetch(`${baseURL}/locations`)
+        return fetch(`${remoteURL}/locations`).then(response => response.json())
     }
 }
 
