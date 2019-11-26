@@ -7,7 +7,7 @@ class LocationCard extends Component {
             <div className="card">
                 <div className="card-content">
                     <picture>
-                        <img src={require('../animal/dog.svg')} alt="Dog" />
+                        <img src={require(`./${this.props.location.pictureName}`)} alt="Location" />
                     </picture>
                     <h3>Name: <span className="card-locationName">{this.props.location.name}</span></h3>
                     <p>Street: {this.props.location.street}<br />
