@@ -8,6 +8,18 @@ class OwnerList extends Component {
         owners: []
     }
 
+    deleteOwner = id => {
+        OwnerManager.delete(id)
+        .then(() => {
+            OwnerManager.getAll()
+            .then(newOwners => {
+                this.setState({
+                    owners: newOwners
+                })
+            })
+        })
+    }
+
     componentDidMount() {
         // gett all of the owners
         OwnerManager.getAll()
@@ -25,6 +37,7 @@ class OwnerList extends Component {
                 {this.state.owners.map(owner => <OwnerCard
                     key={owner.id}
                     owner={owner}
+                    deleteOwner={this.deleteOwner}
                 />)}
             </div>
         )

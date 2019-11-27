@@ -15,6 +15,9 @@ class LocationCard extends Component {
                         State: {this.props.location.state}<br />
                         Zip: {this.props.location.zip}
                     </p>
+                    <button type="button" onClick={() => this.props.deleteLocation(this.props.location.id)}>
+                        Remove
+                    </button>
                 </div>
             </div>
         )
