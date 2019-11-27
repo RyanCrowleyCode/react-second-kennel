@@ -7,6 +7,13 @@ const LocationManager = {
 
     getAll() {
         return fetch(`${remoteURL}/locations`).then(response => response.json())
+    },
+
+    delete(id) {
+        return fetch(`${remoteURL}/locations/${id}`, {
+            method: "DELETE"
+        })
+        .then(response => response.json())
     }
 }
 
