@@ -1,6 +1,7 @@
 // This component is for displaying the information for a single animal.
 import React, { Component } from 'react'
 import './Animal.css'
+import { Link } from 'react-router-dom'
 
 class AnimalCard extends Component {
     render() {
@@ -14,7 +15,8 @@ class AnimalCard extends Component {
                     <p>Breed: {this.props.animal.breed}</p>
                     <button type="button" onClick={() => this.props.deleteAnimal(this.props.animal.id)}>
                         Discharge
-                    </button>
+                        </button>
+                    <Link to={`/animals/${this.props.animal.id}`}><button>Details</button></Link>
                 </div>
             </div>
         )
