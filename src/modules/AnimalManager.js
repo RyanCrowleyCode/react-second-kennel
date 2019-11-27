@@ -7,6 +7,13 @@ const AnimalManager = {
 
     getAll() {
         return fetch(`${remoteURL}/animals`).then(result => result.json())
+    },
+
+    delete(id) {
+        return fetch(`${remoteURL}/animals/${id}`, {
+            method: "DELETE"
+        })
+        .then(result => result.json())
     }
 }
 
