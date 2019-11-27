@@ -8,6 +8,7 @@ import OwnerList from './owner/OwnerList'
 import AnimalDetail from './animal/AnimalDetail'
 import LocationDetail from './location/LocationDetail'
 import EmployeeDetail from './employee/EmployeeDetail'
+import OwnerDetail from './owner/OwnerDetail'
 
 
 class ApplicationViews extends Component {
@@ -37,10 +38,12 @@ class ApplicationViews extends Component {
                 <Route path="/employees/:employeeId(\d+)" render={(props) => {
                     return <EmployeeDetail employeeId={parseInt(props.match.params.employeeId)} />
                 }} />
-                <Route path="/owners" render={(props) => {
+                <Route exact path="/owners" render={(props) => {
                     return <OwnerList />
-                }} 
-                />
+                }} />
+                <Route path="/owners/:ownerId(\d+)" render={(props) => {
+                    return <OwnerDetail ownerId={parseInt(props.match.params.ownerId)} />
+                }} />
             </React.Fragment>
         )
     }

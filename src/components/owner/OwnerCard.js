@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 class OwnerCard extends Component {
     render() {
@@ -13,6 +14,7 @@ class OwnerCard extends Component {
                     <button type="button" onClick={() => this.props.deleteOwner(this.props.owner.id)}>
                         Remove
                     </button>
+                    <Link to={`/owners/${this.props.owner.id}`}><button>Details</button></Link>
                 </div>
             </div>
         )
