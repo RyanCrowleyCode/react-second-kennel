@@ -7,6 +7,13 @@ const OwnerManager = {
 
     getAll() {
         return fetch(`${baseURL}/owners`).then(response => response.json())
+    },
+
+    delete(id) {
+        return fetch(`${baseURL}/owners/${id}`, {
+            method: "DELETE"
+        })
+        .then(response => response.json())
     }
 }
 
