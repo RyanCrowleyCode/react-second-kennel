@@ -7,6 +7,13 @@ const EmployeeManager = {
 
     getAll() {
         return fetch(`${remoteURL}/employees`).then(response => response.json())
+    },
+
+    delete(id) {
+        return fetch(`${remoteURL}/employees/${id}`, {
+            method: "DELETE"
+        })
+        .then(response => response.json())
     }
 
 }
