@@ -8,6 +8,13 @@ class OwnerDetail extends Component {
         name: '',
         phone: '',
         pictureName: '',
+        loadingStatus: true
+    }
+
+    handleDelete = () => {
+        this.setState({loadingStatus: true})
+        OwnerManager.delete(this.props.ownerId)
+        .then(() => this.props.history.push("/owners"))
     }
 
     componentDidMount() {
@@ -16,7 +23,8 @@ class OwnerDetail extends Component {
                 this.setState({
                     name: ownerObject.name,
                     phone: ownerObject.phone,
-                    pictureName: ownerObject.pictureName
+                    pictureName: ownerObject.pictureName,
+                    loadingStatus: false
                 })
             })
     }
@@ -33,6 +41,7 @@ class OwnerDetail extends Component {
                             : null}
                         <h3>Name: <span style={{ color: 'darkslategrey' }}>{this.state.name}</span></h3>
                         <p><b>Phone:</b> {this.state.phone}</p>
+                        <button type="button" disabled={this.state.loadingStatus} onClick={this.handleDelete}>Remove</button>
                     </div>
                 </div>
             </div>

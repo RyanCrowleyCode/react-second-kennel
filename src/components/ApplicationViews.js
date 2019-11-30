@@ -48,7 +48,9 @@ class ApplicationViews extends Component {
                     return <OwnerList />
                 }} />
                 <Route path="/owners/:ownerId(\d+)" render={(props) => {
-                    return <OwnerDetail ownerId={parseInt(props.match.params.ownerId)} />
+                    return <OwnerDetail
+                        ownerId={parseInt(props.match.params.ownerId)}
+                        {...props} />
                 }} />
             </React.Fragment>
         )
