@@ -7,6 +7,13 @@ class EmployeeDetail extends Component {
         name: '',
         info: '',
         pictureName: '',
+        loadingStatus: true
+    }
+
+    handleDelete = () => {
+        this.setState({loadingStatus: true})
+        EmployeeManager.delete(this.props.employeeId)
+        .then(() => this.props.history.push("/employees"))
     }
 
     componentDidMount() {
@@ -15,7 +22,8 @@ class EmployeeDetail extends Component {
             this.setState({
                 name: employeeObject.name,
                 info: employeeObject.info,
-                pictureName: employeeObject.pictureName
+                pictureName: employeeObject.pictureName,
+                loadingStatus: false
             })
         })
     }
@@ -32,6 +40,7 @@ class EmployeeDetail extends Component {
                         : null}
                     <h3>Name: <span style={{ color: 'darkslategrey' }}>{this.state.name}</span></h3>
                     <p>{this.state.info}</p>
+                    <button type="button" disabled={this.state.loadingStatus} onClick={this.handleDelete}>Fire</button>
                 </div>
             </div>
         </div>

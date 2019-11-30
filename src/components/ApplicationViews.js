@@ -38,7 +38,9 @@ class ApplicationViews extends Component {
                     return <EmployeeList />
                 }} />
                 <Route path="/employees/:employeeId(\d+)" render={(props) => {
-                    return <EmployeeDetail employeeId={parseInt(props.match.params.employeeId)} />
+                    return <EmployeeDetail 
+                    employeeId={parseInt(props.match.params.employeeId)}
+                    {...props} />
                 }} />
                 <Route exact path="/owners" render={(props) => {
                     return <OwnerList />
