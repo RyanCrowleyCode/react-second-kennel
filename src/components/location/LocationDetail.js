@@ -10,8 +10,15 @@ class LocationDetail extends Component {
         city: '',
         state: '',
         zip: '',
-        pictureName: ''
+        pictureName: '',
+        loadingStatus: true
 
+    }
+
+    handleDelete = () => {
+        this.setState({loadingStatus: true})
+        LocationManager.delete(this.props.locationId)
+        .then(() => this.props.history.push("/locations"))
     }
 
     componentDidMount() {
@@ -23,7 +30,8 @@ class LocationDetail extends Component {
                 city: locationObject.city,
                 state: locationObject.state,
                 zip: locationObject.zip,
-                pictureName: locationObject.pictureName
+                pictureName: locationObject.pictureName,
+                loadingStatus: false
             })
         })
     }
@@ -42,6 +50,7 @@ class LocationDetail extends Component {
                     <p>{this.state.street}
                         <br />{this.state.city}, {this.state.state} {this.state.zip}
                     </p>
+                    <button type="button" disabled={this.state.loadingStatus} onClick={this.handleDelete}>Remove</button>
                 </div>
             </div>
         </div>
