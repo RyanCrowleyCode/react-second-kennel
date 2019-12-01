@@ -12,6 +12,7 @@ import OwnerDetail from './owner/OwnerDetail'
 import AnimalForm from './animal/AnimalForm'
 import LocationForm from './location/LocationForm'
 import EmployeeForm from './employee/EmployeeForm'
+import OwnerForm from './owner/OwnerForm'
 
 
 class ApplicationViews extends Component {
@@ -58,7 +59,10 @@ class ApplicationViews extends Component {
                         {...props} />
                 }} />
                 <Route exact path="/owners" render={(props) => {
-                    return <OwnerList />
+                    return <OwnerList {...props}/>
+                }} />
+                <Route path="/owners/new" render={(props) => {
+                    return <OwnerForm {...props} />
                 }} />
                 <Route path="/owners/:ownerId(\d+)" render={(props) => {
                     return <OwnerDetail

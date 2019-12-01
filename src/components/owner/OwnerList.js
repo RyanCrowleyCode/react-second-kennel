@@ -10,14 +10,14 @@ class OwnerList extends Component {
 
     deleteOwner = id => {
         OwnerManager.delete(id)
-        .then(() => {
-            OwnerManager.getAll()
-            .then(newOwners => {
-                this.setState({
-                    owners: newOwners
-                })
+            .then(() => {
+                OwnerManager.getAll()
+                    .then(newOwners => {
+                        this.setState({
+                            owners: newOwners
+                        })
+                    })
             })
-        })
     }
 
     componentDidMount() {
@@ -33,13 +33,20 @@ class OwnerList extends Component {
 
     render() {
         return (
-            <div className="container-cards">
-                {this.state.owners.map(owner => <OwnerCard
-                    key={owner.id}
-                    owner={owner}
-                    deleteOwner={this.deleteOwner}
-                />)}
-            </div>
+            <React.Fragment>
+                <section className="section-content">
+                    <button type="button" className="btn" onClick={() => { this.props.history.push('/owners/new') }}>
+                        Add Owner
+            </button>
+                </section>
+                <div className="container-cards">
+                    {this.state.owners.map(owner => <OwnerCard
+                        key={owner.id}
+                        owner={owner}
+                        deleteOwner={this.deleteOwner}
+                    />)}
+                </div>
+            </React.Fragment>
         )
     }
 

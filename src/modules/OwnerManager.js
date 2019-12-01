@@ -14,6 +14,17 @@ const OwnerManager = {
             method: "DELETE"
         })
         .then(response => response.json())
+    },
+
+    post(newOwner) {
+        return fetch(`${baseURL}/owners`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(newOwner)
+        })
+        .then(data => data.json())
     }
 }
 
