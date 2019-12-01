@@ -10,14 +10,14 @@ class EmployeeList extends Component {
 
     deleteEmployee = id => {
         EmployeeManager.delete(id)
-        .then(() => {
-            EmployeeManager.getAll()
-            .then(newEmployees => {
-                this.setState({
-                    employees: newEmployees
-                })
+            .then(() => {
+                EmployeeManager.getAll()
+                    .then(newEmployees => {
+                        this.setState({
+                            employees: newEmployees
+                        })
+                    })
             })
-        })
     }
 
     componentDidMount() {
@@ -31,13 +31,20 @@ class EmployeeList extends Component {
 
     render() {
         return (
-            <div className="container-cards">
-                {this.state.employees.map(employee => <EmployeeCard
-                    key={employee.id}
-                    employee={employee}
-                    deleteEmployee={this.deleteEmployee}
-                />)}
-            </div>
+            <React.Fragment>
+                 <section className="section-content">
+                    <button type="button" className="btn" onClick={() => {this.props.history.push('/employees/new')}}>
+                        Add Employee
+                    </button>
+                </section>
+                <div className="container-cards">
+                    {this.state.employees.map(employee => <EmployeeCard
+                        key={employee.id}
+                        employee={employee}
+                        deleteEmployee={this.deleteEmployee}
+                    />)}
+                </div>
+            </React.Fragment>
         )
     }
 
