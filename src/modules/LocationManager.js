@@ -1,3 +1,4 @@
+
 const remoteURL = "http://localhost:5002"
 
 const LocationManager = {
@@ -13,7 +14,18 @@ const LocationManager = {
         return fetch(`${remoteURL}/locations/${id}`, {
             method: "DELETE"
         })
-        .then(response => response.json())
+            .then(response => response.json())
+    },
+
+    post(newLocation) {
+        return fetch(`${remoteURL}/locations`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(newLocation)
+        })
+            .then(data => data.json())
     }
 }
 

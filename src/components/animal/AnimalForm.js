@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import AnimalManager from '../../modules/AnimalManager'
 import './AnimalForm.css'
+import firstLetterCase from '../../modules/helpers'
 
 class AnimalForm extends Component {
     state = {
@@ -25,8 +26,8 @@ class AnimalForm extends Component {
         } else {
             this.setState({loadingStatus: true})
             const animal = {
-                name: this.state.animalName,
-                breed: this.state.breed,
+                name: (firstLetterCase(this.state.animalName)),
+                breed: (firstLetterCase(this.state.breed)),
                 pictureName: "dog.svg"
             }
 
