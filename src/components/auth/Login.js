@@ -53,14 +53,14 @@ class Login extends Component {
                             // why not just required, why autoFocus=""
                             required="" autoFocus=""
                         />
-                        <label htmlFor="inputEmail">Email address</label>
+                        <label htmlFor="email">Email Address</label>
 
                         <input onChange={this.handleFieldChange} type ="password"
                             id="password"
                             placeholder="password"
                             required=""
                         />
-                        <label htmlFor="inputPassword">Password</label>
+                        <label htmlFor="password">Password</label>
                     </div>
                     <button type="submit">
                         Sign In
